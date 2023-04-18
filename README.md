@@ -43,14 +43,14 @@ Las ventanas temporales son las siguientes:
 
 En relación al tipo de fenómeno, identificamos:
 - Todos los desastres naturales
-- Lluvias e inundaciones
-- Ciclones tropicales
-- Temperaturas extremas
-- Heladas y nevadas
+- Solo lluvias e inundaciones
+- Solo ciclones tropicales
+- Solo temperaturas extremas
+- Solo heladas y nevadas
 
 En términos de metodología, nuestras estimaciones utilizan efectos fijos cómo herramientas de causalidad. Para las variables dependientes continuas utilizamos regresiones de tipo OLS y para las variables dependientes binarias modelos de regresión binomial con ligas logit y probit.
 
 En ese sentido, encontramos a las personas en diversos puntos del tiempo, desde 1 hasta 5 veces, gracias a las distintas respuestas períodicas que dan en la ENOE.
 Para la construcción de nuestros datos utilizamos a todas las personas que participaron en la encuesta desde 2016 hasta el segundo trimestre de 2022. A cada una de ella le identificamos los tipos de desastre que han vivido en cada uno de los cortes temporales.
 
-Por esta misma razón, la base de datos resultante del proceso es sumamente valiosa aunque también de una magnitud relativamente considerable. En términos de observaciones supera los 6.5 millones. Cada una de ellas tiene combinaciones de tipo de desastre que vivió en cada corte de tiempo (113 aproximadamente) las cuáles se suman a variable scon los indicadores de interés y algunos otros identificadores.
+Por esta misma razón, la base de datos resultante del proceso es sumamente valiosa aunque también de una magnitud relativamente considerable. En términos de observaciones supera los 6.5 millones. Cada una de ellas tiene combinaciones de tipo de desastre que vivió en cada corte de tiempo (113 aproximadamente) las cuáles se suman a variables con los indicadores de interés y algunos otros identificadores de la persona.
