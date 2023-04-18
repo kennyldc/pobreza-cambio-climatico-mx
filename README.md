@@ -17,7 +17,19 @@ Por un lado, se busca identificar la toma de decisiones "micro" de los mexicanos
 
 Por otro lado, se trata de medir factores "macro" vinculados hacia responder cómo cambia la condición de una entidad o región.
 
-Definir cambio climático es un reto en todos los sentidos. Sin embargo, en este proyecto se asocia a los desastres naturales que ocurren en determinado momento.
+Definir cambio climático es un reto en todos los sentidos. Sin embargo, en este proyecto se asocia al número de declaratorias de emergencia provocadas por desastres naturales que ocurren en determinado momento.
+
+Un desastre natural (exacerbado por el cambio climático) se puede entender como un choque exógeno a determinada población y como consecuencia de estos existe la posibilidad de que existan grandes cambios en diferentes indicadores económicos.
+
+## Módulo Desastres Naturales
+
+En la carpeta "módulo desastres naturales" se condensa toda la información relacionada a cómo se identifican y contabilizan los desastres naturales en el estudio. 
+
+Este elemento es clave para el resto de los niveles de análisis. En primer lugar, son el cimiento de conceptual del estudio, ya que entendemos que una manifestación del cambio climático global está vinculado al aumento en el número de desastres naturales. 
+
+En segundo lugar, entender cómo y cuáles son los desastres que se contabilizan en el estudio tiene un impacto desde el punto de vista metodológico. A menudo son los desastres naturales los que se consideran como variables independientes en los diferentes niveles de análisis. El interés de nuestro estudio es identificar cómo el cambio en el número de desastres afecta indicadores claves económicos.
+
+Dentro de la carpeta se detallan las fuentes de nuestros datos y se agrega un ejercicio de estadística descriptiva de los mismos poniendo énfasis en el componente geográfico del mismo. Esto es, con la ayuda de diverso mapas podemos identificar cuáles son las regiones que son más afectadas por los distintos tipos de fenómenos naturales que afectan el territorio mexicano.
 
 ## Módulo ENOE
 
