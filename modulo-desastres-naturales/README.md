@@ -2,13 +2,15 @@
 
 Como se mencionó en la propuesta del proyecto (ver file principal) nuestra teoría de cambio parte de analizar fenómenos naturales como eventos exógenos (exacerbados por el cambio climático) y para ello se utilizarán los registros de las declaratorias de emergencia de CENAPRED.
 
-LA fuente original de estos datos se encuentra en el [siguiente link](http://www.atlasnacionalderiesgos.gob.mx/archivo/visualizacion-datos.html)
+La fuente original de estos datos se encuentra en el [siguiente link](http://www.atlasnacionalderiesgos.gob.mx/archivo/visualizacion-datos.html)
 
 ## Datos
 
 El archivo que se utiliza en la investigación fue descargado del sitio de CENAPRED el 11 de noviembre de 2022. Esto es importante, porque las declaratorias que se publiquen después de esa fecha no entrarán al estudio de ninguna manera y además es un ejercicio de transparencia en caso de que por alguna razón las autoridades deseen cambiar información por alguna razón.
 
 De este tipo de datos se puede extraer el estado y el municipio (ambos con su respectiva clave) para juntarlo con el resto de las fuentes.
+
+El archivo csv que puede descargarse para replicar todo el análisis de esta investigación se encuentra de acceso público en el [siguiente enlace](https://drive.google.com/file/d/1Jlyrcq3XWR7QDn3RPU2R3Ee_ryNMSDOl/view?usp=sharing)
 
 ### Discusión sobre el tipo de declaratoria
 
