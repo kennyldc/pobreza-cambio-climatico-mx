@@ -23,3 +23,12 @@ La documentación de CENAPRED vinculada a estas bases especifica lo siguiente:
 > Cada declaratoria responde a aspectos diferentes ante un evento perturbador: la declaratoria de emergencia está dirigida a la atención de la vida y la salud de la población, la declaratoria de desastre tiene por objeto proporcionar recursos para la reconstrucción de los daños sufridos en las viviendas y la infraestructura pública; en tanto que el objetivo específico de la declaratoria de contingencia climatológica (o de desastre natural en el sector agropecuario) es apoyar a productores agropecuarios, pesqueros y acuícolas, de bajos ingresos, para reincorporarlos a sus actividades en el menor tiempo posible ante la ocurrencia de contingencias climatológicas atípicas, relevantes, no recurrentes e impredecibles.
 
 Con esto en mente, puede que para un mismo evento climático exista más de una declaratoria. Por ejemplo, una de emergencia y una de desastre. O una de emergencia y una de contingencia. Por ello, *con fines prácticos en la investigación solo se tomarán en cuenta las declaratorias de emergencia al considerarse las más relacionadas con la vida de las personas.*
+
+## Análisis descriptivo
+
+En la carpeta "descriptivo de desastres naturales" se incluye:
+
+- 1. El código con el cual se generó un análisis descriptivo de la base de desastres naturales. 
+- 2. Una presentación ejecutiva con hallazgos significativos al respecto de la base de desastres,
+
+Como se infiere de las secciones anteriores de este documento, solo incluye los desastres de tipo emergencia que ocurrieron después del año 2006. Adicionalmente, este análisis pone particular énfasis en un enfoque geográfico para analizar los datos. De esta manera, es posible identificar con mapas qué municipios fueron los más afectados por los diferentes tipos de desastres que ocurrieron en México de 2006 a finales de 2022.
