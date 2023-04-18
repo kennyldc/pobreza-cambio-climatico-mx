@@ -27,7 +27,7 @@ Este mecanismo se define en la documentación de la siguiente manera:
 
 Lo que en términos prácticos significa para nuestro estudio, es que cada persona puede estar en la muestra de 1 a 5 veces con lo que se facilita el proceso de elaborar una base de datos panel y observar cómo cambian diversos indicadores económicos ante perturbaciones de tipo climatológico.
 
-La ENOE publica los resultados de su encuesta de manera trimestral y dentro de cada uno de ellos publica 5 bases de datos distintas. Lo referente a cómo se prepararon y limpiaron los datos para el análisis se detalla en la siguiente sección.
+La ENOE publica los resultados de su encuesta de manera trimestral aunque en cada uno de ellos hace accesible a la población 5 bases de datos distintas. Lo referente a cómo se prepararon y limpiaron los datos para el análisis se detalla en la siguiente sección.
 
 ## Preparación de los datos
 
@@ -38,5 +38,5 @@ La preparación de los datos para este módulo del estudio se separa en dos etap
 
 Cada una de estas etapas pasó por todo un proceso amplio de construcción los cuales se pueden consultar en las dos carpetas de este módulo:
 
--`limpieza-ENOE`
--`merge-ENOE-desastres`
+- `limpieza-ENOE`
+- `merge-ENOE-desastres`
