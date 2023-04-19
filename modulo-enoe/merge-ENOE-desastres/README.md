@@ -67,3 +67,11 @@ Con las aclaraciones expuestas, el algoritmo que se sigue para unir las bases se
 11. Se filtran los desastres que ha vivido una persona en los últimos 0 a 90 días, 91 a 180 días, 181 a 360 días, 361 a 540 días, 541 a 720 días y 721 a 1800 días anteriores a la encuesta.
 
 12. Se desagregan estos desastres por tipo. De manera que se lleva un conteo de qué fenómeno en particular vivió en ese "t"" rango de días y en otra columna se registra la suma de desastres totales.
+
+## Base de datos final (output)
+
+Con estos ajustes, la nueva base de trabajo tipo panel contiene las mismas 7,283,301 observaciones de la ENOE con la información de empleo de la población en el número de períodos que la persona contestó la encuesta. Sin embargo, de manera adicional tiene las columnas que registran el número de desastres que ha vivido para todas las combinaciones de días previos y de tipos de fenómenos.
+
+Esto es, cada renglón tiene la información económica que contestó en determinada fecha para la ENOE, el número de ciclones, huracanes, nevadas, inundaciones, entre otros, en los últimos 0 a 90 días; el número total de fenómenos que vivió en los mismos 0 a 90 días, y así sucesivamente para las combinaciones temporales de 91 a 180 días, 181 a 360 días, 361 a 540 días, 541 a 720 días y 721 a 1800 días anteriores a la encuesta.
+
+Esta base de datos es la que se utiliza en las regresiones que se ejecutan dentro del análisis. Se puede descargar de manera directa en la [siguiente liga](https://drive.google.com/file/d/1CMJvgDnB9FjN0AIoLyHBTR2L43uazy1j/view?usp=sharing).
