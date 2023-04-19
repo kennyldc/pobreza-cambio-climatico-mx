@@ -43,11 +43,10 @@ Cada una de estas etapas pasó por todo un proceso amplio de construcción los c
 
 En la primera etapa se juntó toda la información de 25 trimestres de la ENOE en una sola base de datos desde la cual podemos identificar a todas las personas que entraron al análisis. Después de condensar esta fuente en una sola se realizó todo un procedimiento para incluir la información de los desastres naturales de tal manera que se pudieran identificar los diversos elementos geográficos: qué el municipio donde vive la persona haya sido afectado por un fenómeno de este tipo. Y elementos temporales: identificar el tiempo que hubiese pasado entre el fenómeno y los indicadores económicos que reportó.
 
-## Análisis estadístico con la información económica de la ENOE.
+## Análisis estadístico de la información económica de la ENOE con los desastres en los diferentes cortes de tiempo.
 
-Una vez que logramos tener la base de datos de trabajo, el siguiente paso consiste en estimar propiamente las ecuaciones y coeficientes que identifiquen la relación entre los fenómenos. 
+Una vez que logramos tener la base de datos de trabajo, brevemente exponemos un análisis descriptivo de nuestra nueva base poniendo énfasis en identificar el número de fenómenos naturales que ha vivido determinada persona ($i$) en los diferentes cortes de tiempo. 
 
-Este proceso se detalla en la carpeta `estimaciones-ENOE`. Dentro de esta se puede identificar: 
+Esta información nos ayuda a tener un panorama más amplio sobre los indicadores que se utilizan en las ecuaciones que se plantean líneas más adelante.
 
-1. El planteamiento econométrico de las estimaciones.
-2. Los resultados obtenidos en este nivel de análisis.
+Este proceso se detalla en la carpeta `descriptivo-ENOE-desastres`.
