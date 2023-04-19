@@ -50,7 +50,6 @@ Adicionalmente, en términos de manejo de datos es necesario juntar los 25 trime
 
 El output final (la base) se puede consultar en el [siguiente enlace](https://drive.google.com/file/d/1LJTjBMrTME-y-DMm0guL5XNBPAGbMOTK/view?usp=sharing).
 
-Al juntar toda la información con los diferentes trimestres posibles, nos encontramos con una base de 9,803,789 entradas que representan todas las veces que el INEGI tuvo un acercamiento con alguna persona en el hogar en algún punto del tiempo. Cada persona aparece tantas veces como se le haya entrevistado. Esto es, puede aparecer entre 1 y 5 veces como máximo.
+Al juntar toda la información con los diferentes trimestres posibles, nos encontramos con una base de 9,803,789 entradas que representan todas las veces que el INEGI tuvo un acercamiento con alguna persona en el hogar en algún punto del tiempo. Cada persona aparece tantas veces como se le haya entrevistado. Esto es, puede aparecer entre 1 y 5 veces como máximo. 
 
-
-
+En pasos posteriores se filtra la base, de tal manera que contando solo a los individuos de 15 años ó mas (quienes están en edad de trabajar de acuerdo a las leyes mexicanas), obtenemos 7,283,301 observaciones.
