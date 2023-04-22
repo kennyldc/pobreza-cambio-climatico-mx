@@ -50,3 +50,11 @@ Una vez que logramos tener la base de datos de trabajo, brevemente exponemos un 
 Esta información nos ayuda a tener un panorama más amplio sobre los indicadores que se utilizan en las ecuaciones que se plantean líneas más adelante.
 
 Este proceso se detalla en la carpeta `descriptivo-ENOE-desastres`.
+
+## Modelo econométrico y estimaciones para el nivel de ENOE
+
+Para poder estimar de manera formal si el número de desastres a los que se enfrenta una persona tiene algún impacto en diversos estimadores, nosotros proponemos un enfoque de tipo causal con la estructura de tipo panel de la base. Dicho de otro modo, no es de nuestro interés saber si los individuos que viven más (o menos) desastres tienen mejores o peores condiciones económicas. Lo que nos interesa es saber como un desastre natural adicional, ceteris paribus, impacta a una persona en indicadores de interés.
+
+Metodológicamente, esto se puede conseguir con un modelo de efectos fijos conocido como two-ways-fixed-effects. En nuestra investigación planteamos dos versiones de este tomando en consideración el tipo de variables dependientes a estimar. En el primero nos enfocamos en variables de respuesta continuas tales como salario y horas trabajadas, mientras que en el segundo estimamos con respecto a variables dependientes binarias tales como la probabilidad de estar desempleado.
+
+En la carpeta `estimaciones-ENOE-desastres` se puede consultar a detalle las ecuaciones formales del modelo y los resultados obtenidos.
