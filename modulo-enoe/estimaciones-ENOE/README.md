@@ -14,19 +14,21 @@ Se recomienda ampliamente revisar todo lo que resta del texto aunque se destaca 
 
 - `estimaciones-enoe-desastres.R` : Código con el cual se realizaron las estimaciones de las ecuaciones que se plantean a continuación.
 
-- `presentacion-ejecutiva-esimaciones-enoe-desastres.pdf` : Una presentación ejecutiva con las tablas de las estimaciones y los principales hallazgos de la inverstigación.
+- `presentacion-ejecutiva-esimaciones-enoe-desastres.pdf` : Una presentación ejecutiva con las tablas de las estimaciones y los principales hallazgos de la investigación.
 
 ## Modelo TWFE con variables continuas
 
-La primera versión de nuestro modelo se estima para las siguientes variables de respuesta que se pueden encontrar en los indicadores originales que mide la ENOE:
+La  primera versión de nuestro modelo se estima para las siguientes variables de respuesta que se pueden encontrar en los indicadores originales que mide la ENOE: a) Ingreso mensual (para todas las personas), b) Ingreso mensual (para todas las personas con ingreso positivo), c) Horas trabajadas (para todas las personas), d) Horas trabajadas (para todas las personas con horas trabajadas positivas).
 
-1. Ingreso mensual
-2. Horas trabajadas
+Como bien puede inferirse, esta primer versión del modelo es únicamente para variables continuas,
 
-De manera específica, la ecuación para el ingreso mensual se plantea como:
+## Ingreso mensual para todas las personas
+
+La ecuación para nuestra primer variable candidata (ingreso mensual para todas las personas) se define de la siguiente manera:
 
 $$
 log(Ingreso_{i})=\beta X_{id}+\delta_i+\phi_t+\epsilon_{i}
 $$
 
+donde $log(Ingreso)$ es el logaritmo natural del ingreso mensual de la persona $i$ que contestó la ENOE y reportó en la encuesta. Y donde $X_{id}$ es el número de desastres naturales que vivió el individuo $i$ en los diferentes cortes de tiempo $d$: 0 a 90, 91 a 180, 181 a 360, 361 a 540, 541 a 720 y 721 a 1800 días antes de la entrevista. La expresión incluye los términos de efectos fijos: a) por individuo, $\delta_{i}$, que se activa cuando la observación corresponde a la persona que contestó la encuesta ($i$) y b) por período, $\phi_{t}$, que simplemente lleva el conteo del **trimestre** en el que se contestó la encuesta (*t*). El término de error $\epsilon_{sit}$ lleva el residual para cada individuo. Por último, cabe aclarar que los errores estimados son de tipo cluster agrupados también de manera individual por persona que contestó la encuesta.
 
