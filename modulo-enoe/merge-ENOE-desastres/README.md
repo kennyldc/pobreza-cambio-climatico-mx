@@ -68,10 +68,31 @@ Con las aclaraciones expuestas, el algoritmo que se sigue para unir las bases se
 
 12. Se desagregan estos desastres por tipo. De manera que se lleva un conteo de qué fenómeno en particular vivió en ese "t"" rango de días y en otra columna se registra la suma de desastres totales.
 
-## Base de datos final (output)
+## Base de datos post-algoritmo de unión de bases
 
 Con estos ajustes, la nueva base de trabajo tipo panel contiene las mismas 7,283,301 observaciones de la ENOE con la información de empleo de la población en el número de períodos que la persona contestó la encuesta. Sin embargo, de manera adicional tiene las columnas que registran el número de desastres que ha vivido para todas las combinaciones de días previos y de tipos de fenómenos.
 
 Esto es, cada renglón tiene la información económica que contestó en determinada fecha para la ENOE, el número de ciclones, huracanes, nevadas, inundaciones, entre otros, en los últimos 0 a 90 días; el número total de fenómenos que vivió en los mismos 0 a 90 días, y así sucesivamente para las combinaciones temporales de 91 a 180 días, 181 a 360 días, 361 a 540 días, 541 a 720 días y 721 a 1800 días anteriores a la encuesta.
 
-Esta base de datos es la que se utiliza en las regresiones que se ejecutan dentro del análisis. Se puede descargar de manera directa en la [siguiente liga](https://drive.google.com/file/d/1CMJvgDnB9FjN0AIoLyHBTR2L43uazy1j/view?usp=sharing).
+## Ajustes a la base post-algoritmo y construcción de categorías de tipos de fenómenos
+
+Ya con la base que incluye todos los desastres naturales un paso adicional consistió en asegurarnos que todas las personas fueran perfectamente identificables en todos los puntos del tiempo en el que aparezcan en la base de datos. 
+
+Esto se tuvo que realizar con la creación de una variable adicional identificadora. De esta manera, dentro del panel es posible identificador a cada persona de manera plena.
+
+Otro de los ajustes relevantes consistió en crear categorías de tipo de desastre más precisas para agrupar todas las que venían originalmente en CENAPRED. 
+
+Por ejemplo, en CENAPRED original era posible identificar tipos de desastre: i) inundación, ii) lluvias y iii) lluvias e inundación. Esto es un problema en el sentido que nos está dando información redundante y que bien podríamos agrupar todo en una misma categoría: lluvias. 
+
+Algo similar pasa con otros de los tipos de desastres por lo que optamos por las siguientes categorías para estudiar el efecto de nuestra relación de interés:
+
+1. Lluvias e inundaciones
+2. Ciclón tropical
+3. Temperaturas extremas
+4. Heladas y nevadas
+
+No olvidemos además que para cada uno de ellos tenemos los diferentes cortes de tiempo y también tenemos la suma de desastres en este mismo grupo de categorías.
+
+## Base de datos de trabajo ENOE-desastres
+
+La base resultante de todo este proceso y que se utiliza en las regresiones que se ejecutan dentro del análisis. Se puede descargar de manera directa en la [siguiente liga](https://drive.google.com/file/d/1CMJvgDnB9FjN0AIoLyHBTR2L43uazy1j/view?usp=sharing).
