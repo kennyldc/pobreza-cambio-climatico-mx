@@ -1,7 +1,7 @@
 # Análisis descriptivo ENOE-Desastres
 # Como se especifica en la información de cómo se armó la base de 
 # ENOE-desastres. El dataset final se puede desacargar de 
-# Google Drive 
+# Google Drive : https://drive.google.com/file/d/1CMJvgDnB9FjN0AIoLyHBTR2L43uazy1j/view
 
 # Librerías y lecturas de files --------------------------------------------
 # Traemos los paquetes relevantes a la sesión de R con p_load
