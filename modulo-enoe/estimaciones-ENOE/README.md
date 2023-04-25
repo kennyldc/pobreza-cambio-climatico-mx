@@ -64,7 +64,7 @@ La primera propuesta consiste en estudiar un posible impacto del género como ef
 Agregamos esta variable como una interacción en nuestro modelo OLS de manera que estimamos:
 
 $$
-log(Ingreso_{i})=\beta X_{id} * Género_{i}+\delta_i+\phi_t+\epsilon_{i}
+log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Género{i} + \beta_3 X_{id} * Género_{i} +\delta_i+\phi_t+\epsilon_{i}
 $$
 
 
