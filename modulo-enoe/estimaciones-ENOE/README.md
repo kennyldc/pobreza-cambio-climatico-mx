@@ -125,7 +125,25 @@ $$
 log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Urbano_{i} + \beta_3 X_{id} * Urbano_{i} +\delta_i+\phi_t+\epsilon_{i}
 $$
 
-Con la misma condición que en el otro modelo heterogéneo. Los resultados se encuentran en la presentación adjunta.
+Con la misma condición que en el otro modelo de efectos heterogéneos (género). Los resultados se encuentran en la presentación adjunta.
 
 ## Horas trabajadas para todas las personas
+
+Una alternativa de indicador económico consiste en sustituir el ingreso del individuo por las horas trabajadas. Ambas son variables continuas por lo que es fácil adaptar la ecuación anterior de manera que: 
+
+$$
+log(HorasTrabajadas_{i})=\beta X_{id}+\delta_i+\phi_t+\epsilon_{i}
+$$
+
+donde $log(HorasTrabajadas)$ es el logaritmo natural de las horas trabajadas a la semana de la persona $i$ que contestó la ENOE y reportó en la encuesta. El resto de los términos tienen el mismo significado y nuestro interés está en el coeficiente $\beta$.
+
+Otra vez tenemos la capacidad, gracias a nuestra innovación del diseño, de identificar si algunos desastres naturales tienen más (o menos) impacto. Además, también podemos ver si los que ocurren en el corto plazo afectan más que los de largo plazo, o viceversa, gracias a las diferentes ventanas temporales que agregamos.
+
+Notemos que otra vez incluir el logaritmo natural en la variable dependiente requiere de nuestra atención ya que existen en la base algunas observaciones de individuos que trabajaron cero horas. 
+
+En estas primeras estimaciones donde incluimos a toda la población, solucionamos este problema agregando una constante (de 0.5 horas trabajadas). 
+
+Tal como se hizo para el caso del ingreso, líneas más adelante se probará una solución diferente.
+
+Por lo pronto, considérese que los resultados de las estimaciones se encuentran en la presentación adjunta de esta carpeta.
 
