@@ -147,3 +147,129 @@ Tal como se hizo para el caso del ingreso, líneas más adelante se probará una
 
 Por lo pronto, considérese que los resultados de las estimaciones se encuentran en la presentación adjunta de esta carpeta.
 
+### Efecto heterogeneo género en horas trabajadas para todas las personas
+
+Tal como lo hicimos para el caso del ingreso, podemos repetir el uso de los términos de interacción para identificar si el género tiene un efecto mediador en la relación de desastres naturales. 
+
+La ecuación es igual a la de ingreso por lo que se invita a considerar las líneas anteriores en este texto.
+
+Los resultados se encuentran directamente en la presentación.
+
+### Efecto heterogeneo urbano/rural en horas trabajadas para todas las personas.
+
+En la presentación con los resultados se encuentran los resultados de la ecuación donde si incluye la variable urbano como término de interacción.
+
+## Horas trabajadas para las personas con horas trabajadas positivas
+
+Siguiendo la lógica que empleamos para el caso de la variable ingreso, en el caso de las horas trabajadas reestimamos nuestro modelo usando solo al subconjunto de personas que tienen horas trabajadas positivas en todos los períodos. 
+
+Nótese que volvemos a la misma discusión al respecto del cambio en los alcances de nuestras estimaciones modificadas. Solo podríamos ver el efecto de los desastres para las personas que sí han trabajado y nunca han dejado de trabajar. 
+
+La ecuación es la misma:
+
+$$
+log(HorasTrabajadas_{i})=\beta X_{id}+\delta_i+\phi_t+\epsilon_{i}
+$$
+
+Para un conjunto de individuos $i$ mucho más reducido.
+
+## Modelo TWFE con variables dummy como dependientes
+
+Llegamos así a la segunda versión de nuestro modelo. En ella utilizamos variables indicadores (o dummy) como dependientes. 
+
+Técnicamente estas regresiones son de tipo binomial donde nosotros podemos escoger la función liga. Siguiendo las prácticas comunes de la literatura, nosotros escogemos la liga "logit" (que por algunos es conocido como modelo logit).
+
+En entregas previas se experimentó también con la liga probit, sin embargo los resultados son muy similares.
+
+Nuestras variables a estudiar, que entrarán como dependientes en la regresión, en este nuevo tipo de modelo son las siguientes:
+
+1. Desempleo
+2. Inactivo
+
+En las siguientes secciones se desarrollará información complementaria para entender la creación de las variables.
+
+## Notas sobre los efectos heterogéneos
+
+Adicionalmente, para seguir un órden respecto a todas nuestras estimaciones, después de cada uno de los resultados principales (para cada variable dependiente) se incluirán los resultados de efectos heterogéneos de nueva cuenta por: i) género y ii) urbano/rural.
+
+## Desempleo como variable dependiente
+
+Para complementar nuestros resultados con respecto al ingreso y las horas trabajadas, en nuestro estudio se propone identificar los cambios en la probabilidad de que alguien entrara al desempleo.
+
+Siguiendo la información disponible en INEGI esto se puede realizar por medio de los grupos en una variable categórica llamada "Clase2".
+
+En este caso, para nuestras estimaciones se creó una nueva variable que tomara como insumo principal aquella. Esta nueva variable (de tipo dummy o indicadora) toma el valor de 1 cuando la persona está **desocupada** y 0 en cualquier otro caso.
+
+Con esto logramos proponer la siguiente ecuación:
+
+$$
+\log \left(\frac{p}{1-p}\right)=\beta_0+\beta_1 X_{id}+ \delta_i+\phi_t+\epsilon_{i}
+$$
+
+Donde $p$ es la probabilidad de estar desempleado. Y el resto de los parámetros son los ya introducidos en las ecuaciones previas. Así, $X_{id}$ son los desastres naturales que vivió la persona $i$ para los diferentes rangos de tiempo $d$, $\delta_{i}$, se activa cuando la observación corresponde a la persona que contestó la encuesta ($i$), $\phi_{t}$, lleva el conteo del **trimestre** en el que se contestó la encuesta (*t*). Y el término de error $\epsilon_{sit}$ lleva el residual para cada individuo. En este caso también agrupamos los errores estándar de tipo cluster por persona que contestó la encuesta.
+
+Los coeficientes de un modelo logit se encuentran en una escala de momios (o log-odds) por lo que fuera del signo, es algo compleja la interpretación de estas razones de probabilidad y además requieren de pasos adicionales.
+
+Con esto en mente, en los resultados que se encuentran en la presentación adjunta de este carpeta optamos por crear una columna adicional  donde se encuentran los valores asociados al **Average Partial Effect (APE)** o Average Marginal Effect, que muestra el cambio en probabilidad ante un cambio en la variable $X$. En una definición más formal, el APE es la derivada promedio de $\frac{\partial p}{\partial X_j}$.
+
+El procedimiento lo dejamos en manos de la librería de R alpaca, que suele ser utilizada en varios modelos y gozar de cierta reputación para implementar modelos de efectos fijos con logit.
+
+En la documentación de ayuda se describe lo siguiente:
+
+> getAPEs is a post-estimation routine that can be used to estimate average partial effects with respect to all covariates in the model and the corresponding covariance matrix. The estimation of the covariance is based on a linear approximation (delta method) plus an optional finite population correction. Note that the command automatically determines which of the regressors are binary or non-binary.
+
+Se recomienda revisar la documentación principal del autor para más información, [en este link](https://github.com/amrei-stammann/alpaca).
+
+Los valores del Average Partial Effect o Average Marginal Effect ya tiene una interpretación natural. Se pueden leer como el cambio en la probabilidad de $y$ ante el cambio de una unidad de $x$.
+
+Las tablas con los resultados se pueden consultar en la presentación adjunta de esta carpeta.
+
+### Modelos por tipo de desastre
+
+Siguiendo la lógica de las estimaciones anteriores, nos interesa también conocer el efecto para diferentes tipos de desastres.
+
+En este caso estimamos:
+
+$$
+\log \left(\frac{p}{1-p}\right)=\beta_0+\beta_1 X_{id}+ \mathbf{W}_{id} + \delta_i+\phi_t+\epsilon_{i}
+$$
+
+los posibles valores de $X$ puede ser: {lluvias, ciclón tropical, temperatura extrema, heladas} en todas las combinaciones de tiempo $d$: {0 a 90, 91 a 180, 181 a 360, 361 a 540, 541 a 720 y 721 a 1800}.
+
+Los resultados se presentan en el mismo formato que las tablas anteriores.
+
+### Efecto heterogeneo género en desempleo
+
+También en este modelo podemos investigar si hay algún efecto heterogéneo dependiendo del género de la persona.
+
+Reestimamos de forma fácil nuestra ecuación para agregar el término de género y una interacción con los desastres. 
+
+Esta se puede entender como: 
+
+$$
+\log \left(\frac{p}{1-p}\right)=\beta_0+\beta_1 X_{id}+ \beta_2 Género_i + \beta3 X_{id} * Género_i \delta_i+\phi_t+\epsilon_{i}
+$$
+
+Igualmente aplicamos la variación para los modelos con los distintos tipos de fenómenos. 
+
+Los resultados se encuentran en la presentación adjunta.
+
+### Efecto heterogeneo urbano/rural en desempleo
+
+En la presentación con los resultados se encuentran los resultados de la ecuación donde se incluye la variable urbano como término de interacción.
+
+## Inactivo como variable dependiente
+
+Llegamos así a nuestras últimas estimaciones de este módulo del proyecto. Estas forman parte de la variación del modelo de efectos fijos en la cual incluimos variables binarias como dependientes solo que en este caso nuestra variable de respuesta es "inactivo".
+
+Para construir esta variable, recurrimos de nuevo a la información con la que ya contamos de la ENOE. 
+
+De acuerdo al glosario, la definición para **inactivo disponible** es:
+
+> Este grupo de inactivos está constituido por las personas de 12 y más años que no trabajaron ni tenían empleo y no buscaron activamente uno, por desaliento o porque piensan que no se los darían por la edad, porque no tienen estudios, etc.; pero estarían dispuestas a aceptar un trabajo si se les ofreciera, sin embargo no buscan activamente uno.
+
+Dentro del dataset, lo más cercano a este grupo se encuentra como una categoría de la variable "clase 2" ya que ahí se encuentra el grupo (level) "disponible".
+
+Por ello, construimos una nueva variable indicadora a partir de este level. Esto es, de la variable categórica "clase 2" construimos una dummy que toma el valor de 1 cuando la persona está disponible y 0 en cualquier otro caso.
+
+
