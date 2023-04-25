@@ -51,7 +51,7 @@ donde $log(Ingreso)$ es el logaritmo natural del ingreso mensual de la persona $
 
 Un detalle importante en la manera en que está planteada esta ecuación consiste en el uso de la transformación logarítmica en la variable dependiente. Por una parte, en variables como ingreso es útil incluirla ya que permite interpretar los coeficientes en términos de cambios porcentuales. Sin embargo, es evidente que también genera problemas al momento de enfrentarse a aquellas observaciones con un valor de 0. 
 
-En el planteamiento de esta estimación inicial se soluciona el problema agregando una constante a cada una de las observaciones de la variable. Sin embargo, en la sección siguiente cambiamos ligeramente el enfoque.
+> En el planteamiento de esta estimación inicial se soluciona el problema agregando una constante (de uno) a cada una de las observaciones de la variable. Sin embargo, en la sección siguiente cambiamos ligeramente el enfoque.
 
 Los resultados de las estimaciones de esta ecuación se pueden encontrar en la presentación adjunta de esta carpeta. 
 
@@ -61,22 +61,71 @@ Como se anticipaba líneas más arriba de este texto, con esta misma propuesta d
 
 La primera propuesta consiste en estudiar un posible impacto del género como efecto mediador. 
 
-Agregamos esta variable como una interacción en nuestro modelo OLS de manera que estimamos:
+Agregamos esta variable como una interacción en nuestro modelo OLS de manera que nuestra estimación queda de la siguiente manera:
 
 $$
-log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Género{i} + \beta_3 X_{id} * Género_{i} +\delta_i+\phi_t+\epsilon_{i}
+log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Género_{i} + \beta_3 X_{id} * Género_{i} +\delta_i+\phi_t+\epsilon_{i}
 $$
 
+donde $log(Ingreso)$, $X_{id}$, $\delta_{i}$, $\phi_{t}$ y $\epsilon_{sit}$ significan lo mismo que en la ecuación anterior. Sin embargo, en este caso $\beta_1$ es el parámetro que representa el efecto sobre el ingreso provocado por cambios en desastres naturales, $\beta_2$ el parámetro que identifica si hay alguna diferencia en ingreso entre hombre y mujeres (el género del individuo $i$) y $beta_3$ el nuevo parámetro de interés que identifica si hay un efecto heterogéneo de los desastres cuando la persona se identifica con determinado género.
+
+Los resultados se muestran en la presentación adjunta a esta carpeta. Vale la pena notar que la categoría de referencia es la de género masculino ("hombre" en la base de datos).
+
+### Efecto heterogéneo por nivel de urbanización (urbano/rural)
+
+Siguiendo exactamente la misma lógica que en el caso anterior, ahora buscamos conocer si pertenecer a una comunidad "urbana" o "rural" hacen alguna diferencia (un efecto mediador) en la relación de los desastres naturales con el nivel de ingreso. 
+
+El planteamiento es prácticamente el mismo:
+
+$$
+log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Urbano_{i} + \beta_3 X_{id} * Urbano_{i} +\delta_i+\phi_t+\epsilon_{i}
+$$
+
+Solo que en este caso, la variable $Urbano_i$ es una indicadora que toma el valor de 1 cuando la persona vive en una zona que el INEGI considera como urbana (según los criterios de la ENOE) y 0 cuando vive en una zona rural.
+
+El coeficiente que nos indica si hay algún efecto heterogéneo entre quienes viven en cada una de los tipos de zona es de nueva cuenta $\beta_3$
+
+Los resultados se muestran en la presentación adjunta a esta carpeta. Vale la pena notar que la categoría de referencia es la de zona rural.
 
 ## Ingreso mensual para las personas con ingreso positivo
 
-Una alternativa que sugerimos a la estimación del ingreso es utilizar únicamente en la regresión a las personas que tienen un ingreso positivo. La ecuación es exactamente la misma:
+> Una alternativa que sugerimos a la estimación del ingreso es utilizar únicamente en la regresión a las personas que tienen un ingreso positivo. 
+
+Esta propuesta se realiza como medida cautelar debido a que algunos autores sugieren que agregar una constante a una variable continua para sacar el logaritmo natural puede crear sesgos (ejemplos Bellego et al 2022; Wooldridge).
+
+Estas estimaciones permiten además ser exhaustivos en cuanto a todos los posibles efectos que tienen los desastres naturales. Sin embargo, se considera relevante dejar puntualizado que la teoría de cambio sufre modificaciones. 
+
+En este caso, las estimaciones no se realizan para todas las observaciones en el panel, sino solo con aquellos individuos que tienen un ingreso positivo. Estamos identificando cambios en el ingreso provocados por desastres naturales _para personas que ya tenían ingresos y que nunca perdieron los mismos_.
+
+En términos de la ecuación a estimar, podemos usar exactamente la misma que en el caso pasado. Esto es:
 
 $$
 log(Ingreso_{i})=\beta X_{id}+\delta_i+\phi_t+\epsilon_{i}
 $$
 
-Solo que en este caso $i$ representa a toda persona que haya respondido la ENOE y además refiera tener un ingreso positivo. 
+Solo que en este caso $i$ representa a toda persona que haya respondido la ENOE y además refiera tener un ingreso positivo.
+
+Los resultados se pueden encontrar en la presentación adjunta.
+
+### Efecto heterogéneo por género para personas con ingresos positivos
+
+Reestimamos:
+
+$$
+log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Género_{i} + \beta_3 X_{id} * Género_{i} +\delta_i+\phi_t+\epsilon_{i}
+$$
+
+Donde $i$ solo son individuos con ingreso positivo. Los resultados se pueden encontrar en la presentación adjunta.
+
+### Efecto heterogéneo por urbano/rural para personas con ingresos positivos
+
+Reestimamos: 
+
+$$
+log(Ingreso_{i})=\beta_1 X_{id} + \beta_2 Urbano_{i} + \beta_3 X_{id} * Urbano_{i} +\delta_i+\phi_t+\epsilon_{i}
+$$
+
+Con la misma condición que en el otro modelo heterogéneo. Los resultados se encuentran en la presentación adjunta.
 
 ## Horas trabajadas para todas las personas
 
