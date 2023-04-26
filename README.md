@@ -38,9 +38,10 @@ En la carpeta "módulo ENOE" se incluye la información asociada al nivel indivi
 Siguiendo el denominador del estudio, los desastres naturales se toman como factores exógenos a una población. 
 
 A su vez, lo que se intenta explicar son cambios en:
-1. Salario del trabajador
+1. Ingreso mensual
 2. Horas trabajadas 
 3. Probabilidad de desempleo
+4. Probabilidad de estar inactivo
 
 La verdadera innovación del proyecto consiste en agregar elementos a) geográficos, b) temporales y c) de tipo de fenómeno, sumamente granulares para analizar esta relación. Consideramos que simplemente analizar si una región o entidad ha sufrido a causa de un desastre natural no es suficiente para entender a fondo la relación entre estos dos fenómenos.
 
@@ -60,9 +61,19 @@ En relación al tipo de fenómeno, identificamos:
 - Solo temperaturas extremas
 - Solo heladas y nevadas
 
-En términos de metodología, nuestras estimaciones utilizan efectos fijos cómo herramientas de causalidad. Para las variables dependientes continuas utilizamos regresiones de tipo OLS y para las variables dependientes binarias modelos de regresión binomial con ligas logit y probit.
+En términos de metodología, nuestras estimaciones utilizan efectos fijos cómo herramientas de causalidad. Para las variables dependientes continuas utilizamos regresiones de tipo OLS y para las variables dependientes binarias modelos de regresión binomial con ligas logit.
 
-En ese sentido, encontramos a las personas en diversos puntos del tiempo, desde 1 hasta 5 veces, gracias a las distintas respuestas períodicas que dan en la ENOE.
+Adicionalmente se integra todo un análisis sumamente exhaustivo en el que se analiza si existen algunos efectos heterogéneos en los modelos de interés. Particularmente evaluamos si las siguientes variables logran explicar algún efecto diferenciado:
+
+- Género
+- Condición de urbanidad en la residencia
+
+Para las estimaciones encontramos a las personas en diversos puntos del tiempo, desde 1 hasta 5 veces, gracias a las distintas respuestas períodicas que dan en la ENOE lo que nos da luhar a una base tipo panel.
+
 Para la construcción de nuestros datos utilizamos a todas las personas que participaron en la encuesta desde 2016 hasta el segundo trimestre de 2022. A cada una de ella le identificamos los tipos de desastre que han vivido en cada uno de los cortes temporales.
 
+Este proceso requirió de un trabajo muy arduo, particularmente en cuanto a costo computacional se refiere. Por ello, en este estudio existe toda una sección donde se detallan todas las decisiones que se tomaron para la construcción de la base y el algoritmo (o los pasos) que se siguió para juntar la información de desastres. 
+
 Por esta misma razón, la base de datos resultante del proceso es sumamente valiosa aunque también de una magnitud relativamente considerable. En términos de observaciones supera los 6.5 millones. Cada una de ellas tiene combinaciones de tipo de desastre que vivió en cada corte de tiempo (113 aproximadamente) las cuáles se suman a variables con los indicadores de interés y algunos otros identificadores de la persona.
+
+Se recomienda ampliamente explorar la carpeta referente al módulo ENOE para analizar todos los pasos que se siguieron desde la preparación de la base hasta las estimaciones econométricas.
