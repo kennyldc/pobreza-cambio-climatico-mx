@@ -272,4 +272,20 @@ Dentro del dataset, lo más cercano a este grupo se encuentra como una categorí
 
 Por ello, construimos una nueva variable indicadora a partir de este level. Esto es, de la variable categórica "clase 2" construimos una dummy que toma el valor de 1 cuando la persona está disponible y 0 en cualquier otro caso.
 
+La ecuación sigue la misma estructura que usamos para la variable desempleo tal que:
 
+$$
+\log \left(\frac{p}{1-p}\right)=\beta_0+\beta_1 X_{id}+ \delta_i+\phi_t+\epsilon_{i}
+$$
+
+Pero $p$ es la probabilidad de estar inactivo. El resto de los parámetros son exactamente los mismos.
+
+Los resultados se encuentran en la presentación de esta carpeta.
+
+### Efecto heterogeneo género en inactivo como variable dependiente
+
+Con el propósito de ser exhaustivos en nuestras estimaciones agregamos también el término de interacción al caso con inactivo como variable dependiente. Los resultados se encuentran en la presentación de esta carpeta.
+
+### Efecto heterogeneo urbano/rural en inactivo como variable dependiente
+
+Los últimos resultados que se encuentran en la presentación adjunta corresponden a los efectos heterogeneos entre urbano/rural para la variable dependiente inactivo.
