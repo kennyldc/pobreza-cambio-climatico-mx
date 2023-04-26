@@ -21,6 +21,8 @@ Definir cambio climático es un reto en todos los sentidos. Sin embargo, en este
 
 Un desastre natural (exacerbado por el cambio climático) se puede entender como un choque exógeno a determinada población y como consecuencia de estos existe la posibilidad de que existan grandes cambios en diferentes indicadores económicos.
 
+En el momento actual de la investigación nos encontramos con resultados detallados y exhaustivos en el nivel de análisis "micro" con las estimaciones de la ENOE las cuales se introducen líneas más abajo en este mismo texto.
+
 ## Módulo Desastres Naturales
 
 En la carpeta "módulo desastres naturales" se condensa toda la información relacionada a cómo se identifican y contabilizan los desastres naturales en el estudio. 
